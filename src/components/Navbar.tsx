@@ -3,8 +3,17 @@ import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
-const Navbar = class extends React.Component {
-  constructor(props) {
+type State = {
+  active: boolean;
+  navBarActiveClass: string;
+}
+
+type Props = {
+  children?: any;
+}
+
+const Navbar = class extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props)
     this.state = {
       active: false,
